@@ -1,30 +1,4 @@
 {
-  "functionConnections": {
-    "azureFunctionOperation": {
-        "authentication": {
-            "name": "Code",
-            "type": "QueryString",
-            "value": "@appsetting('azureFunctionOperation_functionAppKey')"
-        },
-        "displayName": "FunctionApiConnection",
-        "function": {
-            "id": "@appsetting('azureFunctionOperation_functionResourceURI')"
-        },
-        "triggerUrl": "@appsetting('azureFunctionOperation_functionTriggerURI')"
-    }
-    },
-  "managedApiConnections": {
-    "azureblob": {
-      "api": {
-        "id": "/subscriptions/@appsetting('WORKFLOWS_SUBSCRIPTION_ID')/providers/Microsoft.Web/locations/@appsetting('WORKFLOWS_LOCATION_NAME')/managedApis/azureblob"
-      },
-      "connection": {
-        "id": "/subscriptions/@appsetting('WORKFLOWS_SUBSCRIPTION_ID')/resourceGroups/@appsetting('WORKFLOWS_RESOURCE_GROUP_NAME')/providers/Microsoft.Web/connections/azureblob"
-      },
-      "connectionRuntimeUrl": "@appsetting('BLOB_CONNECTION_RUNTIMEURL')",
-      "authentication": "@parameters('blob_auth')"
-    }
-  },
   "serviceProviderConnections": {
     "serviceBus": {
       "parameterValues": {
@@ -33,7 +7,144 @@
       "serviceProvider": {
         "id": "/serviceProviders/serviceBus"
       },
-      "displayName": "ServiceBus-Builtin"
+      "displayName": "test"
+    },
+    "AzureBlob": {
+      "parameterValues": {
+        "connectionString": "@appsetting('AzureBlob_connectionString')"
+      },
+      "serviceProvider": {
+        "id": "/serviceProviders/AzureBlob"
+      },
+      "displayName": "Test Blob"
+    },
+    "AzureBlob-2": {
+      "parameterValues": {
+        "connectionString": "@appsetting('AzureBlob_12_connectionString')"
+      },
+      "serviceProvider": {
+        "id": "/serviceProviders/AzureBlob"
+      },
+      "displayName": "Test 2"
+    },
+    "serviceBus-2": {
+      "parameterValues": {
+        "connectionString": "@appsetting('serviceBus_12_connectionString')"
+      },
+      "serviceProvider": {
+        "id": "/serviceProviders/serviceBus"
+      },
+      "displayName": "newsb"
+    },
+    "Smtp": {
+      "parameterValues": {
+        "serverAddress": "@appsetting('Smtp_serverAddress')",
+        "username": "@appsetting('Smtp_username')",
+        "password": "@appsetting('Smtp_password')",
+        "enableSSL": "@appsetting('Smtp_enableSSL')"
+      },
+      "serviceProvider": {
+        "id": "/serviceProviders/Smtp"
+      },
+      "displayName": "hdfhr"
+    }
+  },
+  "managedApiConnections": {
+    "office365": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/office365"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/office365"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/office365/966cee7d55504765b156c9f3878e454f",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
+    },
+    "azureblob_1": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/azureblob"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/azureblob"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/azureblob/dc0dc73ae668474d9e5d44b1057d4e93",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
+    },
+    "azuremonitorlogs": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/azuremonitorlogs"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/azuremonitorlogs"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/azuremonitorlogs/328c8fb6e90842cab4cbe2ad44bd7731",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
+    },
+    "servicebus_1": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/servicebus"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/servicebus"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/servicebus/0e38d7d7ad7c4895baf53e4d46a8ea95",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
+    },
+    "azureblob_2": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/azureblob"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/azureblob-2"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/azureblob/26e80b0e915f4af286b81245cc1408ad",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
+    },
+    "sftpwithssh": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/sftpwithssh"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/sftpwithssh"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/sftpwithssh/29a79f3259d6404ba9940ceb206e9567",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
+    },
+    "smtp": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/smtp"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/smtp-2"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/smtp/b350f74de94a4ae8876a439f2b8fbed3",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
+    },
+    "office365_1": {
+      "api": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/providers/Microsoft.Web/locations/eastus/managedApis/office365"
+      },
+      "connection": {
+        "id": "/subscriptions/803b1a54-518c-4bcb-a981-92b7bb53eb50/resourceGroups/Logic-App-Standard/providers/Microsoft.Web/connections/office365-3"
+      },
+      "connectionRuntimeUrl": "https://e6d32a60c875e245.08.common.logic-eastus.azure-apihub.net/apim/office365/7a3f38d6993d4176b259d31dd76b522a",
+      "authentication": {
+        "type": "ManagedServiceIdentity"
+      }
     }
   }
 }
