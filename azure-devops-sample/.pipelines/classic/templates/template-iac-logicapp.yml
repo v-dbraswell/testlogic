@@ -50,7 +50,7 @@ jobs:
           displayName: 'Deploy Connectors'
           inputs:
             azureSubscription: ${{ parameters.serviceConnection }}
-            resourceGroupName: $(resourceGroupName)
+            resourceGroupName: $(devops)
             location: $(resourceGroupLocation)
             csmFile: '$(Pipeline.Workspace)/$(artifactName)/connectors-template.json'
             overrideParameters: '
