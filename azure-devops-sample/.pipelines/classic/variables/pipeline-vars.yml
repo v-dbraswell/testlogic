@@ -6,7 +6,7 @@ variables:
   suffix: 'dev'
 
   # Resource Group
-  resourceGroupLocation: 'eastus2'
+  resourceGroupLocation: 'eastus'
   resourceGroupName: '$(projectName)'
 
   # Storage - make sure this is unique!
